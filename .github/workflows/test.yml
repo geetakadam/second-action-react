@@ -1,0 +1,12 @@
+name : Second Wok Flow
+on : push
+jobs: 
+  test : 
+    runs-on : ubuntu-20.04
+    steps : 
+      - name : Get Code
+        uses: actions/checkout@v4
+      - name : Install dependacies
+        run : npm ci 
+      - name : Run Tests
+        run : npm test         
