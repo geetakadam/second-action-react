@@ -1,5 +1,5 @@
 name : Deployment Test
-on : push
+on : [push,workflow_dispatch]
 jobs: 
   test : 
     runs-on : ubuntu-20.04
