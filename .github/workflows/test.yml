@@ -10,9 +10,10 @@ jobs:
         run : npm ci 
       - name : Run Tests
         run : npm test 
-  deploy : 
+  deploy :
+    needs : test
     runs-on : ubuntu-20.04  
-    steps :     
+    steps :        
       - name : Install dependacies
         run : npm ci 
       - name : Build Project
