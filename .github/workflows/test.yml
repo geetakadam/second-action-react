@@ -1,4 +1,4 @@
-name : Second Wok Flow
+name : Deployment Test
 on : push
 jobs: 
   test : 
@@ -9,4 +9,13 @@ jobs:
       - name : Install dependacies
         run : npm ci 
       - name : Run Tests
-        run : npm test         
+        run : npm test 
+  deploy : 
+    runs-on : ubuntu-20.04  
+    steps :     
+      - name : Install dependacies
+        run : npm ci 
+      - name : Build Project
+        run : npm run build   
+      - name : Deploy
+        run : echo "Deploying..."           
